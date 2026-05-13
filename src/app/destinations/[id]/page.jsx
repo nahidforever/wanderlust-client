@@ -4,6 +4,8 @@ import Image from "next/image";
 
 import { FaRegCalendar } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
+import { EditModal } from "@/components/EditModal";
+import { DeleteAlert } from "@/components/DeleteAlert";
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -17,6 +19,11 @@ const DestinationDetailsPage = async ({ params }) => {
 
   return (
     <div className="max-w-7xl mx-auto">
+      <div className="flex items-center justify-end gap-5">
+        <EditModal destination={destination}></EditModal>
+        <DeleteAlert destination={destination}></DeleteAlert>
+      </div>
+
       <div className="flex items-center justify-end gap-5"></div>
 
       <div className="flex  items-center gap-3 justify-end mt-5 mb-3"></div>
