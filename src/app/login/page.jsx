@@ -40,7 +40,7 @@ const LogInPage = () => {
   return (
     <div className="max-w-7xl mx-auto mt-12 mb-15">
       <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold">Create Account</h2>
+        <h2 className="text-2xl font-bold">Login Account</h2>
         <p>Start your adventure with wanderlust</p>
       </div>
       <Card className="border rounded-none mt-3">

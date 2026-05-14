@@ -36,7 +36,6 @@ const BookingCard = ({ destination }) => {
     const data = await res.json();
 
     toast.success("You Booked  Successfully");
-    console.log(data);
   };
 
   return (
