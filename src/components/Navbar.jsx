@@ -27,7 +27,7 @@ const Navbar = () => {
         </li>
 
         <li>
-          <Link href={"/my-booking"}>My Booking</Link>
+          <Link href={"/my-bookings"}>My Booking</Link>
         </li>
 
         <li>
