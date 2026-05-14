@@ -6,6 +6,7 @@ import { FaRegCalendar } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
 import { EditModal } from "@/components/EditModal";
 import { DeleteAlert } from "@/components/DeleteAlert";
+import BookingCard from "@/components/BookingCard";
 
 const DestinationDetailsPage = async ({ params }) => {
   const { id } = await params;
@@ -35,28 +36,28 @@ const DestinationDetailsPage = async ({ params }) => {
         width={800}
       />
 
-      <div className="p-2">
-        <div className="flex items-center gap-1">
-          <LuMapPin /> <span>{country}</span>
-        </div>
-        <div className="flex justify-between">
-          <div>
+      <div className="flex justify-between">
+        <div className="p-2">
+          <div className="flex items-center gap-1">
+            <LuMapPin /> <span>{country}</span>
+          </div>
+          <div className="flex justify-between">
             <div>
-              <h2 className="text-xl font-bold">{destinationName}</h2>
-            </div>
-            <div className="flex gap-1 items-center">
-              <FaRegCalendar /> {duration}
+              <div>
+                <h2 className="text-xl font-bold">{destinationName}</h2>
+              </div>
+              <div className="flex gap-1 items-center">
+                <FaRegCalendar /> {duration}
+              </div>
             </div>
           </div>
 
-          <div>
-            <h3 className="text-2xl font-bold">$ {price}</h3>
-          </div>
+          <h1 className="mt-10 text-2xl font-bold">Overview</h1>
+
+          <p>{description}</p>
         </div>
 
-        <h1 className="mt-10 text-2xl font-bold">Overview</h1>
-
-        <p>{description}</p>
+        <BookingCard destination={destination} />
       </div>
     </div>
   );
