@@ -30,6 +30,8 @@ const LogInPage = () => {
     if (data) {
       alert("Log in Successfully");
     }
+
+    console.log({ data, error });
   };
 
   const handleGoogleSignIn = async () => {
