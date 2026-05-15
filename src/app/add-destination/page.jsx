@@ -23,13 +23,16 @@ const AddDestinationPage = () => {
 
     const destination = Object.fromEntries(formData.entries());
 
-    const res = await fetch("http://localhost:5000/destination", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/destination`,
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(destination),
       },
-      body: JSON.stringify(destination),
-    });
+    );
 
     const data = await res.json();
 
@@ -41,7 +44,6 @@ const AddDestinationPage = () => {
   };
   return (
     <div className="p-5 max-w-7xl w-full mx-auto">
-     
       <h1 className="text-2xl font-bold">Add Destination</h1>
       <Card>
         <form onSubmit={onSubmit} className="p-10 space-y-8">
